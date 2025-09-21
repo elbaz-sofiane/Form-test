@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     try {
       // Remplace cette URL par ton endpoint Cloudflare Worker / serveur proxy
-      const response = await fetch("https://withered-sun-05b1.shdhhsofiane.workers.dev/", {
+      const response = await fetch("https://ton-worker.cloudflareworkers.com/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data)
