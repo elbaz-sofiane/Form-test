@@ -1,34 +1,43 @@
- document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("contact-form");
-  const status = document.getElementById("form-status");
+<form id="myForm">
+  <input type="text" name="username" placeholder="Ton nom" required>
+  <input type="text" name="message" placeholder="Ton message" required>
+  <button type="submit">Envoyer</button>
+</form>
 
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    status.textContent = "Envoi en cours...";
+<script>
+const form = document.getElementById('myForm');
+const webhookURL = 'https://discord.com/api/webhooks/1419306152596078652/gyajChb0IKSVhic2vMIwJNyQJ_-Ot9X7zhDzZ_bO4K_In_FdXRvL5tw998yI0AvKswBh';
 
-    const data = {
-      name: form.name.value,
-      email: form.email.value,
-      message: form.message.value
+form.addEventListener('submit', async (e) => {
+    e.preventDefault(); // empêche le rechargement de la page
+
+    const formData = new FormData(form);
+    const username = formData.get('username');
+    const message = formData.get('message');
+
+    const payload = {
+        username: username,
+        content: message
     };
 
     try {
-      // Remplace cette URL par ton endpoint Cloudflare Worker / serveur proxy
-      const response = await fetch("https://workers-playground-bitter-hall-1e89.shdhhsofiane.workers.dev/", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data)
-      });
+        const response = await fetch(webhookURL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(payload)
+        });
 
-      if (response.ok) {
-        status.textContent = "Message envoyé avec succès !";
-        form.reset();
-      } else {
-        status.textContent = "Erreur lors de l'envoi.";
-      }
+        if (response.ok) {
+            alert('Message envoyé !');
+            form.reset();
+        } else {
+            alert('Erreur lors de l\'envoi du message.');
+        }
     } catch (err) {
-      console.error(err);
-      status.textContent = "Erreur réseau. Essayez plus tard.";
+        console.error(err);
+        alert('Erreur lors de l\'envoi du message.');
     }
-  });
 });
+</script>
