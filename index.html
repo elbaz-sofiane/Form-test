@@ -5,51 +5,47 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title data-i18n="page_title">Sofiane ELBAZ — CV</title>
   <meta name="description" content="CV en ligne de Sofiane ELBAZ, étudiant en recherche d'alternance pour BTS SIO." />
-
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <!-- ecran cgmt -->
+  <!-- Loader -->
   <div id="loader">
     <h1 id="typewriter"></h1>
   </div>
 
   <!-- Contenu -->
   <div class="wrap">
+    <!-- Header -->
     <header class="header">
       <div class="header-top">
         <div class="header-titles">
           <h1 data-i18n="name">ELBAZ Sofiane</h1>
           <h2 data-i18n="subtitle">Étudiant · En recherche d'alternance pour BTS SIO</h2>
         </div>
-
         <div class="header-buttons">
-          <!-- btn theme -->
           <button id="theme-toggle" aria-label="Basculer le thème" title="Changer de thème">
             <span class="icon">🌙</span>
           </button>
-
-          <!-- Bouton lng -->
           <button id="lang-toggle" aria-label="Changer langue" title="Change language"></button>
         </div>
       </div>
-      
-    </header >
+    </header>
 
     <main class="grid">
-
-      <!-- Colonne < -->
+      <!-- Colonne gauche -->
       <div>
-        <section id="apropos" class="card"> 
-          <h3 data-i18n="about_title">À propos de moi</h3>  <!--le data i18 sert a inserer le texte pour langue-->
+        <!-- À propos -->
+        <section id="apropos" class="card">
+          <h3 data-i18n="about_title">À propos de moi</h3>
           <p data-i18n="about_text">
             Actuellement à la recherche d'une alternance pour effectuer un BTS SIO.
           </p>
-          <span id="more-text" style="display:none;"></span>  <!--pour bouton lire plus-->
+          <span id="more-text" style="display:none;"></span>
           <a href="#" id="toggle-link" class="link-more">En savoir plus</a>
         </section>
 
+        <!-- Expériences -->
         <section id="experiences" class="card">
           <h3 data-i18n="experiences_title">Expériences</h3>
           <div class="exp">
@@ -58,28 +54,25 @@
               <div class="meta" data-i18n="exp1_date">06/2025 − 08/2025</div>
               <p data-i18n="exp1_desc">Montage d'équipements informatiques, installation de postes, maintenance, dépannage et support utilisateur.</p>
             </div>
-
             <div class="job">
               <strong data-i18n="exp2_title">Chauffeur livreur VL — Burddy</strong>
               <div class="meta" data-i18n="exp2_date">05/2025 − Actuellement</div>
               <p data-i18n="exp2_desc">Livraisons/récupération, chargement d'une camionnette, relation client et gestion des colis, gestion du temps, organisation de tournées, préparation de commandes.</p>
             </div>
-
             <div class="job">
               <strong data-i18n="exp3_title">Employé polyvalent — QUOTA</strong>
               <div class="meta" data-i18n="exp3_date">10/2024 − 05/2025</div>
               <p data-i18n="exp3_desc">Prise de commandes (téléphone/présentiel), livraison, cuisine, plonge, service en salle.</p>
             </div>
-          
-          
             <div class="job">
               <strong data-i18n="exp4_title">Opperateur de production — ELIS</strong>
               <div class="meta" data-i18n="exp4_date">07/2024 − 09/2024</div>
-              <p data-i18n="exp4_desc">Récéption et tri des articles, controle qualité, utilisation de machine, conditionnement, controle qualité.</p>
+              <p data-i18n="exp4_desc">Récéption et tri des articles, contrôle qualité, utilisation de machine, conditionnement.</p>
             </div>
           </div>
         </section>
 
+        <!-- Formations -->
         <section id="formations" class="card">
           <h3 data-i18n="formations_title">Formations</h3>
           <div class="exp">
@@ -98,6 +91,7 @@
           </div>
         </section>
 
+        <!-- Objectifs -->
         <section id="objectif" class="card">
           <h3 data-i18n="objectifs_title">Objectifs</h3>
           <p data-i18n="objectif_short"><strong>Court terme :</strong> Trouver une alternance afin de réaliser un BTS SIO et apprendre en entreprise.</p>
@@ -105,10 +99,9 @@
         </section>
       </div>
 
-
-
-      <!-- Colonne > -->
+      <!-- Colonne droite -->
       <aside>
+        <!-- Compétences -->
         <section class="card" id="competences">
           <h3 data-i18n="competences_title">Compétences</h3>
           <div class="skills">
@@ -124,6 +117,7 @@
           <p class="muted">IDE : CLion, Visual Studio, PyCharm</p>
         </section>
 
+        <!-- Logiciels -->
         <section class="card">
           <h3 data-i18n="logiciels_title">Logiciel / Bureautique</h3>
           <div class="skills">
@@ -139,6 +133,7 @@
           </div>
         </section>
 
+        <!-- Atouts -->
         <section class="card">
           <h3 data-i18n="atouts_title">Atouts</h3>
           <div class="skills">
@@ -154,6 +149,7 @@
           </div>
         </section>
 
+        <!-- Langues -->
         <section class="card">
           <h3 data-i18n="langues_title">Langues</h3>
           <div class="skills">
@@ -162,50 +158,16 @@
             <span class="skill" data-i18n="lang3">Arabe</span>
           </div>
         </section>
-
-            <section class="card" id="contact">
-        <h3 data-i18n="contact_title">Contact</h3>
-        <p><span data-i18n="email_label">Email :</span> 
-            <a href="mailto:sofiane.elbaz1@icloud.com" class="link-strong">sofiane.elbaz1@icloud.com</a></p>
-        <p><span data-i18n="phone_label">Téléphone :</span> 
-            <a href="tel:+33628201638" class="link-strong">06 28 20 16 38</a></p>
-
-        <p>
-            <a href="https://github.com/elbaz-sofiane" target="_blank" class="social" aria-label="GitHub"> 
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" class="icon-github">
-            <span>GitHub</span> 
-            </a>
-        </p>
-        <p>
-            <a href="https://www.linkedin.com/in/sofiane-elbaz-490477380" target="_blank" class="social" aria-label="LinkedIn">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn">
-            <span>LinkedIn</span>
-            </a>
-        </p>
-
-        <p><a href="/CV-Sofiane/files/CV.pdf" class="btn" download data-i18n="download_cv">Télécharger mon CV</a></p>
-        </section>
-        
-        
-        <section class="card">
-          <h3 data-i18n="port">MON PORTFOLIO</h3>
-<a href="https://elbaz-sofiane.github.io/Portfolio/" target="_blank" class="btn-port">
-  <img src="https://brandlogo.org/wp-content/uploads/2024/05/Adobe-Portfolio-Logo.png.webp"
-       alt="Portfolio"
-       class="icoport">
-  Portfolio
-</a>
-
-        </section>
       </aside>
     </main>
 
-<section id="projets" class="card full-width">
-  <h3 data-i18n="projets_title">Projets</h3>
-  <div class="exp">
-
-    <!--Projet 1 -->
-    <div class="job">
+    <!-- Projets -->
+    <section id="projets" class="card full-width">
+      <h3 data-i18n="projets_title">Projets</h3>
+      <div class="exp">
+        <!-- Projet 1 à 5 ... même structure que précédemment -->
+        <!-- Exemple Projet 1 -->
+<div class="job">
       <strong data-i18n="proj1_title">Site CV en ligne - HTML/CSS/JS - Projet personnel</strong>
       <p data-i18n="proj1_desc">
         Développement d’un CV en ligne responsive avec HTML, CSS et JavaScript (dark mode + multilingue).
@@ -298,71 +260,53 @@
         </a>
       </div>
     </div>
+      </div>
+    </section>
 
-  </div>
-</section>
-
-
-    </div>
-  </div>
-</section>
-
-
-
-<div class="grid">
-<section class="contact2" id="contact2">
-    <h3 data-i18n="contact_title">Contact</h3>
-
-    <p><span data-i18n="email_label">Email :</span> 
-        <a href="mailto:sofiane.elbaz1@icloud.com" class="link-strong">sofiane.elbaz1@icloud.com</a></p>
-    <p><span data-i18n="phone_label">Téléphone :</span> 
-        <a href="tel:+33628201638" class="link-strong">06 28 20 16 38</a></p>
-
-    <p>
-        <a href="https://github.com/elbaz-sofiane" target="_blank" class="social" aria-label="GitHub"> 
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" class="icon-github">
-        <span>GitHub</span> 
+    <!-- Contact + Portfolio fusionné -->
+    <section id="contact-portfolio" class="card full-width">
+      <div id="portfolio">
+        <h3 data-i18n="port">MON PORTFOLIO</h3>
+        <a href="https://elbaz-sofiane.github.io/Portfolio/" target="_blank" class="btn-port">
+          Portfolio
         </a>
-    </p>
-    <p>
-        <a href="https://www.linkedin.com/in/sofiane-elbaz-490477380" target="_blank" class="social" aria-label="LinkedIn">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn">
-        <span>LinkedIn</span>
-        </a>
-    </p>
+      </div>
 
-    <p><a href="/CV-Sofiane/files/CV.pdf" class="btn" download data-i18n="download_cv">Télécharger mon CV</a></p>
+      <div id="contact">
+        <h3 data-i18n="contact_title">Contact</h3>
+        <p><span data-i18n="email_label">Email :</span> <a href="mailto:sofiane.elbaz1@icloud.com">sofiane.elbaz1@icloud.com</a></p>
+        <p><span data-i18n="phone_label">Téléphone :</span> <a href="tel:+33628201638">06 28 20 16 38</a></p>
+        <p>
+          <a href="https://github.com/elbaz-sofiane" target="_blank" class="social" aria-label="GitHub"> 
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" class="icon-github"> GitHub
+          </a>
+        </p>
+        <p>
+          <a href="https://www.linkedin.com/in/sofiane-elbaz-490477380" target="_blank" class="social" aria-label="LinkedIn">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn"> LinkedIn
+          </a>
+        </p>
+        <p><a href="/CV-Sofiane/files/CV.pdf" class="btn" download data-i18n="download_cv">Télécharger mon CV</a></p>
 
-    <!-- FORMULAIRE CONTACT -->
-    <form id="contact-form" class="card" style="margin-top:20px;">
-        <h3>Envoyer un message</h3>
+        <form id="contact-form">
+          <label for="name">Nom :</label>
+          <input type="text" id="name" name="name" placeholder="Votre nom" required>
+          <label for="email">Email :</label>
+          <input type="email" id="email" name="email" placeholder="Votre email" required>
+          <label for="message">Message :</label>
+          <textarea id="message" name="message" rows="4" placeholder="Votre message" required></textarea>
+          <button type="submit" class="btn">Envoyer</button>
+          <p id="form-status"></p>
+        </form>
+      </div>
+    </section>
 
-        <label for="name">Nom :</label>
-        <input type="text" id="name" name="name" placeholder="Votre nom" required>
-
-        <label for="email">Email :</label>
-        <input type="email" id="email" name="email" placeholder="Votre email" required>
-
-        <label for="message">Message :</label>
-        <textarea id="message" name="message" rows="4" placeholder="Votre message" required></textarea>
-
-        <button type="submit" class="btn">Envoyer</button>
-        <p id="form-status" style="margin-top:10px;color:var(--muted);"></p>
-    </form>
-</section>
-<script src="/Form-test/contact.js"></script>
-</div>
-
-
-
-
-        <footer>
+    <footer>
       <span data-i18n="footer">©2025 Sofiane ELBAZ - Tous droits réservés.</span>
-      <br><br>
     </footer>
   </div>
 
   <script src="script.js"></script>
+  <script src="contact.js"></script>
 </body>
 </html>
-

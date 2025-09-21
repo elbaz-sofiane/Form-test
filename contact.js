@@ -3,7 +3,7 @@ const form = document.getElementById('contact-form');
 const status = document.getElementById('form-status');
 
 // Ton webhook Discord
-const webhookURL = 'https://discord.com/api/webhooks/1419306152596078652/gyajChb0IKSVhic2vMIwJNyQJ_-Ot9X7zhDzZ_bO4K_In_FdXRvL5tw998yI0AvKswBh';
+const webhookURL = 'https://discord.com/api/webhooks/1419316952664375366/NgTG31MGuWvFORBUVRJYArkhIBD0eZ7nCfjMMQSSg8sS5cZWhELIEXS8eWZlmEKjJZOe';
 
 // Événement submit
 form.addEventListener('submit', async (e) => {
@@ -14,6 +14,7 @@ form.addEventListener('submit', async (e) => {
     const name = formData.get('name').trim();
     const email = formData.get('email').trim();
     const message = formData.get('message').trim();
+    const username = "Formulaire";
 
     // Vérification rapide des champs
     if (!name || !email || !message) {
@@ -24,8 +25,8 @@ form.addEventListener('submit', async (e) => {
 
     // Payload pour Discord
     const payload = {
-        username: name,
-        content: `**Nom:** ${name}\n**Email:** ${email}\n**Message:** ${message}`
+        username: username,
+        content: `**👨‍💻Nom:** ${name}\n**✉️Email:** ${email}\n**🖋️Message:** ${message}`
     };
 
     // Envoi vers le webhook Discord
@@ -37,7 +38,7 @@ form.addEventListener('submit', async (e) => {
         });
 
         if (response.ok) {
-            status.textContent = "Message envoyé avec succès ! ✅";
+            status.textContent = "Message envoyé, Je reviens vers vous au plus vite ! ✅";
             status.style.color = "green";
             form.reset(); // Réinitialise le formulaire
         } else {
