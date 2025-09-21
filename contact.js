@@ -14,7 +14,7 @@
 
     try {
       // Remplace cette URL par ton endpoint Cloudflare Worker / serveur proxy
-      const response = await fetch("https://ton-worker.cloudflareworkers.com/", {
+      const response = await fetch("https://workers-playground-bitter-hall-1e89.shdhhsofiane.workers.dev/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data)
