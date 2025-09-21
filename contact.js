@@ -1,43 +1,53 @@
-<form id="myForm">
-  <input type="text" name="username" placeholder="Ton nom" required>
-  <input type="text" name="message" placeholder="Ton message" required>
-  <button type="submit">Envoyer</button>
-</form>
+// Sélection du formulaire et de l'élément de statut
+const form = document.getElementById('contact-form');
+const status = document.getElementById('form-status');
 
-<script>
-const form = document.getElementById('myForm');
+// Ton webhook Discord
 const webhookURL = 'https://discord.com/api/webhooks/1419306152596078652/gyajChb0IKSVhic2vMIwJNyQJ_-Ot9X7zhDzZ_bO4K_In_FdXRvL5tw998yI0AvKswBh';
 
+// Événement submit
 form.addEventListener('submit', async (e) => {
-    e.preventDefault(); // empêche le rechargement de la page
+    e.preventDefault(); // Empêche le rechargement de la page
 
+    // Récupère les valeurs du formulaire
     const formData = new FormData(form);
-    const username = formData.get('username');
-    const message = formData.get('message');
+    const name = formData.get('name').trim();
+    const email = formData.get('email').trim();
+    const message = formData.get('message').trim();
 
+    // Vérification rapide des champs
+    if (!name || !email || !message) {
+        status.textContent = "Veuillez remplir tous les champs ! ❌";
+        status.style.color = "red";
+        return;
+    }
+
+    // Payload pour Discord
     const payload = {
-        username: username,
-        content: message
+        username: name,
+        content: `**Nom:** ${name}\n**Email:** ${email}\n**Message:** ${message}`
     };
 
+    // Envoi vers le webhook Discord
     try {
         const response = await fetch(webhookURL, {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(payload)
         });
 
         if (response.ok) {
-            alert('Message envoyé !');
-            form.reset();
+            status.textContent = "Message envoyé avec succès ! ✅";
+            status.style.color = "green";
+            form.reset(); // Réinitialise le formulaire
         } else {
-            alert('Erreur lors de l\'envoi du message.');
+            status.textContent = "Erreur lors de l'envoi. ❌";
+            status.style.color = "red";
+            console.error("Erreur Discord webhook:", response.statusText);
         }
-    } catch (err) {
-        console.error(err);
-        alert('Erreur lors de l\'envoi du message.');
+    } catch (error) {
+        status.textContent = "Erreur lors de l'envoi. ❌";
+        status.style.color = "red";
+        console.error("Erreur fetch:", error);
     }
 });
-</script>
